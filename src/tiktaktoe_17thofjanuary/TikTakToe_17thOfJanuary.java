@@ -9,13 +9,10 @@ package tiktaktoe_17thofjanuary;
  * @author user
  */
 public class TikTakToe_17thOfJanuary {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        //display grid. We will use an array with strings
+    
+    public static String[][]setupGridArray(){
+       
+        //initiliazing and display the grid. We will use an array with strings
         String [][] gridArray = new String [3][5];
         gridArray[0][0] = "_";
         gridArray[0][1] = "|";
@@ -35,13 +32,30 @@ public class TikTakToe_17thOfJanuary {
         gridArray[2][3] = "|";
         gridArray[2][4] = " ";
         
+        return gridArray;  
+    }
+    
+    //method to display the grid
+    public static void  displayGrid(String[][] gridArray) {
         for (int row=0; row<gridArray.length; row++) {
             
             for (int col=0; col<gridArray[row].length; col++){
                 System.out.print(gridArray[row][col]);
             }
             System.out.println(""); // to have an emty line between rows 
-        }
+        }     
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        String[][] gridArray = setupGridArray(); //creating the methods we will keep just teh b=usiness logic in main mathod 
+        
+        // call function on grid array method to display teh grid 
+         displayGrid(gridArray); 
+        
         
     }
     
