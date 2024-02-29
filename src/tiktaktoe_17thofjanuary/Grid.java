@@ -8,7 +8,7 @@ package tiktaktoe_17thofjanuary;
  *
  * @author user
  */
-public class Gridd24__24thOfJanuary {
+public class Grid {
     
     private int height;
     private int width;
@@ -16,7 +16,7 @@ public class Gridd24__24thOfJanuary {
     private String[][] gridArray;
 
     //create a constructor 
-    public Gridd24__24thOfJanuary() {
+    public Grid() {
         this.height = 3;
         this.width = 3;
         
@@ -25,7 +25,7 @@ public class Gridd24__24thOfJanuary {
     }
 
      //Constructor to let  to overwrite if they want to 
-    public Gridd24__24thOfJanuary(int height, int width) {
+    public Grid(int height, int width) {
         this.height = height;
         this.width = width;
         //initialise the grid Array
@@ -75,23 +75,41 @@ public class Gridd24__24thOfJanuary {
        
         //initiliazing and display the grid. We will use an array with strings
         String [][] gridArray = new String [height][2*width-1]; //we changed from 3 and 5 to height and 2*width. Makes it the third odd number 
-        gridArray[0][0] = "_";
-        gridArray[0][1] = "|";
-        gridArray[0][2] = "_";
-        gridArray[0][3] = "|";
-        gridArray[0][4] = "_";
         
-        gridArray[1][0] = "_";
-        gridArray[1][1] = "|";
-        gridArray[1][2] = "_";
-        gridArray[1][3] = "|";
-        gridArray[1][4] = "_";
+        //lets use a loop to refactor the grid 
         
-        gridArray[2][0] = " ";
-        gridArray[2][1] = "|";
-        gridArray[2][2] = " ";
-        gridArray[2][3] = "|";
-        gridArray[2][4] = " ";
+        for (int row =0; row < gridArray.length; row++) {
+            for(int col = 0; col <gridArray[row].length; col++) {
+           //if col is odd 
+                if (col%2==1) {
+                gridArray[row][col] = "|" ; 
+                //if not last row 
+            }else if (row < gridArray.length-1) {
+                gridArray[row][col] = "_";
+           //this is for if is the last row 
+            }else {
+                gridArray[row][col] = " ";
+            }            
+        }
+    }
+        //no need for hard we refactored with an for loop for better practise 
+//        gridArray[0][0] = "_";
+//        gridArray[0][1] = "|";
+///        gridArray[0][2] = "_";
+   //     gridArray[0][3] = "|";
+   //     gridArray[0][4] = "_";
+   //     
+   //     gridArray[1][0] = "_";
+   //     gridArray[1][1] = "|";
+   //     gridArray[1][2] = "_";
+   //     gridArray[1][3] = "|";
+   //     gridArray[1][4] = "_";
+        
+   //     gridArray[2][0] = " ";
+   //     gridArray[2][1] = "|";
+   //     gridArray[2][2] = " ";
+  //     gridArray[2][3] = "|";
+ //  gridArray[2][4] = " ";
         
         return gridArray;  
     }

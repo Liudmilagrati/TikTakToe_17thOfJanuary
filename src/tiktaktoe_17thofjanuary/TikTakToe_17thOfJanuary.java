@@ -17,17 +17,19 @@ public class TikTakToe_17thOfJanuary {
      */
     public static void main(String[] args) {
         
-        String[][] gridArray = setupGridArray(); //creating the methods we will keep just teh b=usiness logic in main mathod 
+        Grid grid = new Grid();
+        
+        //24/01 we don't need this anymore String[][] gridArray = setupGridArray(); //creating the methods we will keep just teh b=usiness logic in main mathod 
         
         // call function on grid array method to display teh grid 
-         displayGrid(gridArray); 
+         grid.displayGrid(); 
          
          //call update grid method  and declare it as new int array and display teh updates 
-         updateGrid(gridArray, new int[] {0, 0}, "X");
-         displayGrid(gridArray); 
+         grid.updateGrid( new int[] {0, 0}, "X");
+         grid.displayGrid(); 
          System.out.println("");
-         updateGrid(gridArray, new int[] {1, 2}, "O");
-         displayGrid(gridArray); 
+         grid.updateGrid( new int[] {1, 2}, "O");
+         grid.displayGrid(); 
          
          
         
