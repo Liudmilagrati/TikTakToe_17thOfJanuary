@@ -46,6 +46,29 @@ public class TikTakToe_17thOfJanuary {
         }     
     }
 
+    // method to update the grid 
+    // we will need gridArray- grid , int[][] position- whats been uodated , String letter - whats nbeen updated too 
+    //for convinice position will refer 3 by 3, how the user will conceptuliase it
+
+    public static void updateGrid(String[][] gridArray, int[] position, String letter) {
+       
+        //Position 3x3 and needs the player needs 
+        //position = {2, 0}
+        gridArray[position[0]][2*position[1]] = letter; // only even cols - use 2*n+1 for only add columns
+        /*
+        position 
+        0 1 2 
+        0 1 2 
+        0 1 2 
+        
+        grid
+        x|x|x - we want to skip every second element | that's why we multiply by 2
+        01234 - positions
+        
+        */
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -54,6 +77,13 @@ public class TikTakToe_17thOfJanuary {
         String[][] gridArray = setupGridArray(); //creating the methods we will keep just teh b=usiness logic in main mathod 
         
         // call function on grid array method to display teh grid 
+         displayGrid(gridArray); 
+         
+         //call update grid method  and declare it as new int array
+         updateGrid(gridArray, new int[] {0, 0}, "X");
+         displayGrid(gridArray); 
+         System.out.println("");
+         updateGrid(gridArray, new int[] {1, 2}, "O");
          displayGrid(gridArray); 
         
         
